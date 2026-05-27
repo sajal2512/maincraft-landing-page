@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ════════════════════════════════════════════════════════════════
+       META & SEO
+       ════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MainCrafts Technology — Premium software solutions for the future.">
+  <title>MainCrafts Technology</title>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PRECONNECT & FONTS
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FONT AWESOME 6 CDN
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MAIN STYLESHEET
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SKIP LINK — Accessibility: keyboard users can jump to main content
+       ════════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+
+      <!-- Logo -->
+      <a href="#hero" class="navbar__logo" id="navbar-logo" aria-label="MainCrafts Technology — Home">
+        <span class="navbar__logo-text">Main<span class="navbar__logo-accent">Crafts</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        class="navbar__toggle"
+        id="navbar-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="navbar__menu" id="nav-menu" role="list">
+        <li><a href="#hero" class="navbar__link" id="nav-link-home">Home</a></li>
+        <li><a href="#about" class="navbar__link" id="nav-link-about">About</a></li>
+        <li><a href="#services" class="navbar__link" id="nav-link-services">Services</a></li>
+        <li><a href="#contact" class="navbar__link navbar__link--cta" id="nav-link-contact">Contact Us</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+      <!-- Background image layer (set via CSS with assets/hero-bg.png) -->
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <!-- Dark gradient overlay for text readability -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Hero content -->
+      <div class="hero__content container">
+        <p class="hero__overline">Welcome to MainCrafts Technology</p>
+
+        <h1 class="hero__heading" id="hero-heading">
+          Crafting the Future<br>of <span class="text-gradient">Technology</span>
+        </h1>
+
+        <p class="hero__description">
+          We build cutting-edge digital solutions that transform businesses
+          and push the boundaries of innovation.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#services" class="btn btn--primary" id="hero-cta-services">Explore Services</a>
+          <a href="#contact" class="btn btn--outline" id="hero-cta-contact">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT / STATS SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="about__content container">
+
+        <!-- Text Column -->
+        <div class="about__text reveal">
+          <p class="section-overline">Who We Are</p>
+          <h2 class="section-heading" id="about-heading">Innovating Since Day One</h2>
+          <p class="about__description">
+            MainCrafts Technology is a forward-thinking tech company dedicated to
+            delivering exceptional digital experiences. From concept to deployment,
+            we partner with businesses worldwide to build solutions that matter.
+          </p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="about__stats reveal" role="list" aria-label="Company statistics">
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">150+</span>
+            <span class="stat-card__label">Projects Delivered</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">50+</span>
+            <span class="stat-card__label">Global Clients</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">99%</span>
+            <span class="stat-card__label">Client Satisfaction</span>
+          </div>
+          <div class="stat-card" role="listitem">
+            <span class="stat-card__number">24/7</span>
+            <span class="stat-card__label">Support Available</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICES SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="services__content container">
+
+        <p class="section-overline reveal">What We Do</p>
+        <h2 class="section-heading reveal" id="services-heading">Our Services</h2>
+        <p class="section-subheading reveal">
+          End-to-end technology solutions tailored for your business.
+        </p>
+
+        <div class="services__grid">
+
+          <!-- Card 1 — Web Development -->
+          <article class="service-card reveal" id="service-web-dev">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3 class="service-card__title">Web Development</h3>
+            <p class="service-card__description">
+              Responsive, high-performance web applications built with modern
+              frameworks and best practices.
+            </p>
+          </article>
+
+          <!-- Card 2 — Mobile Apps -->
+          <article class="service-card reveal" id="service-mobile-apps">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3 class="service-card__title">Mobile Apps</h3>
+            <p class="service-card__description">
+              Native and cross-platform mobile applications that deliver
+              seamless user experiences.
+            </p>
+          </article>
+
+          <!-- Card 3 — Cloud Solutions -->
+          <article class="service-card reveal" id="service-cloud">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="service-card__title">Cloud Solutions</h3>
+            <p class="service-card__description">
+              Scalable cloud infrastructure and migration services for
+              enterprise-grade reliability.
+            </p>
+          </article>
+
+          <!-- Card 4 — Cybersecurity -->
+          <article class="service-card reveal" id="service-cybersecurity">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="service-card__title">Cybersecurity</h3>
+            <p class="service-card__description">
+              Comprehensive security audits, penetration testing, and
+              zero-trust architecture implementation.
+            </p>
+          </article>
+
+          <!-- Card 5 — Data Analytics -->
+          <article class="service-card reveal" id="service-data-analytics">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="service-card__title">Data Analytics</h3>
+            <p class="service-card__description">
+              Transform raw data into actionable insights with advanced
+              analytics and visualization dashboards.
+            </p>
+          </article>
+
+          <!-- Card 6 — AI Solutions -->
+          <article class="service-card reveal" id="service-ai">
+            <div class="service-card__icon" aria-hidden="true">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="service-card__title">AI Solutions</h3>
+            <p class="service-card__description">
+              Custom AI and machine learning solutions that automate processes
+              and drive intelligent decisions.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CTA BANNER SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="cta-banner" id="contact" aria-labelledby="cta-heading">
+
+      <!-- Radial glow background -->
+      <div class="cta-banner__bg" aria-hidden="true"></div>
+
+      <div class="cta-banner__content container reveal">
+        <h2 class="cta-banner__heading" id="cta-heading">Ready to Build Something Extraordinary?</h2>
+        <p class="cta-banner__description">
+          Let's collaborate to bring your vision to life. Reach out to our team
+          and start your journey with MainCrafts Technology.
+        </p>
+        <a href="mailto:hr@maincrafts.com" class="btn btn--primary btn--lg" id="cta-get-started">
+          Get Started Today
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer__content container">
+
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <span class="footer__logo-text">Main<span class="footer__logo-accent">Crafts</span></span>
+        <p class="footer__tagline">Crafting the future of technology.</p>
+
+        <!-- Social Media Icons -->
+        <div class="footer__social" id="footer-social">
+          <a href="https://linkedin.com" class="footer__social-link" id="social-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://x.com" class="footer__social-link" id="social-twitter" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com" class="footer__social-link" id="social-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer__links">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul role="list">
+          <li><a href="#hero" id="footer-link-home">Home</a></li>
+          <li><a href="#about" id="footer-link-about">About</a></li>
+          <li><a href="#services" id="footer-link-services">Services</a></li>
+          <li><a href="#contact" id="footer-link-contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Contact Us</h4>
+        <ul role="list">
+          <li>
+            <a href="mailto:hr@maincrafts.com" id="footer-email">
+              <i class="fas fa-envelope" aria-hidden="true"></i> hr@maincrafts.com
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer__bottom container">
+      <p>&copy; 2025 MainCrafts Technology. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCROLL-TO-TOP BUTTON
+       ═══════════════════════════════════════════════════════════════ -->
+  <button
+    class="scroll-to-top"
+    id="scroll-to-top"
+    aria-label="Scroll to top"
+    title="Back to top"
+  >
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCRIPTS — Placed at end of body for performance
+       ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    /* ──────────────────────────────────────────────────────────────
+       1. NAVIGATION SCROLL EFFECT
+       Adds 'nav--scrolled' class to <header> when page is scrolled
+       past 50px, enabling a more opaque background and shadow.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      const header = document.getElementById('site-header');
+
+      window.addEventListener('scroll', function () {
+        header.classList.toggle('nav--scrolled', window.scrollY > 50);
+      }, { passive: true });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       2. MOBILE HAMBURGER MENU TOGGLE
+       Toggles the navbar menu visibility and updates aria-expanded.
+       Pressing Escape also closes the menu.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      const toggle = document.getElementById('navbar-toggle');
+      const menu   = document.getElementById('nav-menu');
+
+      // Toggle menu on button click
+      toggle.addEventListener('click', function () {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        menu.classList.toggle('navbar__menu--open');
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('navbar__menu--open')) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('navbar__menu--open');
+          toggle.focus();
+        }
+      });
+
+      // Close menu when a nav link is clicked (for smooth scroll UX)
+      menu.querySelectorAll('.navbar__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('navbar__menu--open');
+        });
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       3. INTERSECTION OBSERVER — SCROLL REVEAL
+       Observes all elements with the class 'reveal'. When an element
+       enters the viewport (15% threshold), the 'revealed' class is
+       added and the element is unobserved to avoid re-triggering.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      // Respect user's motion preferences
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        // Immediately reveal everything if user prefers reduced motion
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('revealed');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       4. SCROLL-TO-TOP BUTTON
+       Shows the button when user scrolls past 400px. Clicking it
+       smoothly scrolls the page back to the top.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var btn = document.getElementById('scroll-to-top');
+
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('scroll-to-top--visible', window.scrollY > 400);
+      }, { passive: true });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+</body>
+</html>

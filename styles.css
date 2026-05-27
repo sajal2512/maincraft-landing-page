@@ -1,0 +1,1306 @@
+/* ============================================================================
+   MainCrafts Technology — Complete CSS Stylesheet
+   ============================================================================
+   Version:  1.0
+   Author:   Agent 3 — CSS Styler
+   Updated:  2026-05-22
+   
+   Table of Contents:
+   ──────────────────
+   1.  CSS Custom Properties (Design Tokens)
+   2.  CSS Reset & Base Styles
+   3.  Typography
+   4.  Utility Classes
+   5.  Skip Link (Accessibility)
+   6.  Navigation Header
+   7.  Hero Section
+   8.  About / Stats Section
+   9.  Services Grid
+   10. CTA Banner Section
+   11. Footer
+   12. Button System
+   13. Animations & Keyframes
+   14. Scroll Reveal
+   15. Responsive — Tablet (≤1024px)
+   16. Responsive — Mobile (≤768px)
+   17. Reduced Motion
+   ============================================================================ */
+
+
+/* ============================================================================
+   1. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
+   ============================================================================
+   All colors, gradients, shadows, typography sizes, spacing, layout constraints,
+   and transition timings are defined here. Component styles MUST reference these
+   tokens — never hard-code hex values.
+   ============================================================================ */
+
+:root {
+  /* ── Primary Brand ── */
+  --color-primary:            #6c63ff;
+  --color-primary-light:      #8b83ff;
+  --color-primary-dark:       #5a52e0;
+  --color-primary-rgb:        108, 99, 255;
+
+  /* ── Secondary Brand ── */
+  --color-secondary:          #00d4aa;
+  --color-secondary-light:    #33e0be;
+  --color-secondary-dark:     #00b894;
+  --color-secondary-rgb:      0, 212, 170;
+
+  /* ── Backgrounds ── */
+  --color-bg-primary:         #0a0a1a;
+  --color-bg-secondary:       #12122a;
+  --color-bg-tertiary:        #1a1a3e;
+  --color-bg-nav:             rgba(10, 10, 26, 0.75);
+
+  /* ── Text ── */
+  --color-text-primary:       #ffffff;
+  --color-text-secondary:     #b0b0cc;
+  --color-text-muted:         #6b6b8d;
+  --color-text-accent:        #6c63ff;
+
+  /* ── Borders & Dividers ── */
+  --color-border:             rgba(108, 99, 255, 0.15);
+  --color-border-card:        rgba(255, 255, 255, 0.08);
+  --color-divider:            rgba(255, 255, 255, 0.06);
+
+  /* ── Gradients ── */
+  --gradient-primary:         linear-gradient(135deg, #6c63ff 0%, #00d4aa 100%);
+  --gradient-hero-overlay:    linear-gradient(180deg, rgba(10,10,26,0.6) 0%, rgba(10,10,26,0.95) 100%);
+  --gradient-cta:             linear-gradient(135deg, #6c63ff 0%, #8b83ff 50%, #00d4aa 100%);
+  --gradient-card-hover:      linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(0,212,170,0.08) 100%);
+  --gradient-glow:            radial-gradient(circle, rgba(108,99,255,0.3) 0%, transparent 70%);
+
+  /* ── Shadows ── */
+  --shadow-sm:                0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md:                0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:                0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary:      0 0 20px rgba(108, 99, 255, 0.4);
+  --shadow-glow-secondary:    0 0 20px rgba(0, 212, 170, 0.3);
+  --shadow-card:              0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover:        0 8px 40px rgba(108, 99, 255, 0.2);
+
+  /* ── Typography ── */
+  --font-family-primary:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono:         'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+
+  --text-display:             4.5rem;
+  --text-h1:                  3rem;
+  --text-h2:                  2.25rem;
+  --text-h3:                  1.5rem;
+  --text-h4:                  1.25rem;
+  --text-body:                1.125rem;
+  --text-body-sm:             1rem;
+  --text-caption:             0.875rem;
+  --text-overline:            0.75rem;
+  --text-nav:                 0.9375rem;
+  --text-button:              1rem;
+  --text-stat-number:         3rem;
+  --text-stat-label:          0.875rem;
+
+  /* ── Spacing (4px base unit) ── */
+  --space-1:                  0.25rem;
+  --space-2:                  0.5rem;
+  --space-3:                  1rem;
+  --space-4:                  1.5rem;
+  --space-5:                  2rem;
+  --space-6:                  3rem;
+  --space-7:                  4rem;
+  --space-8:                  6rem;
+  --space-9:                  8rem;
+
+  /* ── Layout ── */
+  --container-max:            1200px;
+  --container-narrow:         800px;
+  --container-padding:        var(--space-4);
+  --border-radius-sm:         8px;
+  --border-radius-md:         12px;
+  --border-radius-lg:         16px;
+  --border-radius-xl:         24px;
+  --border-radius-full:       9999px;
+  --nav-height:               72px;
+
+  /* ── Transitions ── */
+  --transition-fast:          0.15s ease;
+  --transition-base:          0.3s ease;
+  --transition-slow:          0.5s ease;
+  --transition-spring:        0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+/* ============================================================================
+   2. CSS RESET & BASE STYLES
+   ============================================================================
+   Modern box-sizing reset, margin/padding reset, smooth scrolling,
+   and base body styles with Inter font + antialiased rendering.
+   ============================================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent font size inflation on mobile */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--text-body-sm);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Remove default list styles */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Reset anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Reset media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Reset form element fonts */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+/* ============================================================================
+   3. TYPOGRAPHY
+   ============================================================================
+   Heading scales using clamp() for fluid sizing, body text, and link styles.
+   Weights and letter-spacing per the design spec type scale.
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, var(--text-h1));
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, var(--text-h2));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw + 0.25rem, var(--text-h3));
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h4 {
+  font-size: var(--text-h4);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* Interactive link styling — used in body content */
+a:hover {
+  color: var(--color-primary);
+}
+
+
+/* ============================================================================
+   4. UTILITY CLASSES
+   ============================================================================
+   Reusable utilities: container, section padding, text gradient, glass effect.
+   ============================================================================ */
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ── Section Padding ── */
+.section {
+  padding-block: var(--space-8);
+}
+
+/* ── Gradient Text ── */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glassmorphism Effect ── */
+.glass {
+  background: rgba(10, 10, 26, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border-card);
+}
+
+/* ── Section Overline (reusable across sections) ── */
+.section-overline {
+  font-size: var(--text-overline);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+/* ── Section Heading ── */
+.section-heading {
+  font-size: clamp(2rem, 4vw + 1rem, var(--text-h1));
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Section Subheading ── */
+.section-subheading {
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-7);
+}
+
+
+/* ============================================================================
+   5. SKIP LINK (Accessibility)
+   ============================================================================
+   Visually hidden by default, becomes visible on focus for keyboard users.
+   ============================================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-sm);
+  z-index: 10000;
+  transition: top var(--transition-base);
+  font-weight: 600;
+  font-size: var(--text-body-sm);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+
+/* ============================================================================
+   6. NAVIGATION HEADER
+   ============================================================================
+   Fixed glassmorphism nav bar. Scroll state (.scrolled) deepens the background
+   and adds a box shadow. Includes logo, desktop links, mobile hamburger,
+   and the "Contact Us" pill CTA.
+   ============================================================================ */
+
+/* ── Header Container ── */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--color-bg-nav);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+/* ── Scroll state — added via JS when scrollY > 50 ── */
+.site-header.nav--scrolled {
+  background: rgba(10, 10, 26, 0.92);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Navbar layout ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar__logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.navbar__logo-accent {
+  color: var(--color-primary);
+}
+
+/* ── Hamburger Toggle (hidden on desktop) ── */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.navbar__toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-text-primary);
+  border-radius: 2px;
+  transition: transform var(--transition-base),
+              opacity var(--transition-base);
+  transform-origin: center;
+}
+
+/* ── Hamburger → X animation ── */
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle[aria-expanded="true"] .navbar__toggle-bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ── Navigation Links (Desktop) ── */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  list-style: none;
+}
+
+.navbar__link {
+  font-size: var(--text-nav);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding-block: 0.25rem;
+  transition: color var(--transition-base);
+}
+
+/* Hover underline animation via ::after pseudo-element */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-base);
+}
+
+.navbar__link:hover {
+  color: var(--color-primary);
+}
+
+.navbar__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active/current link state */
+.navbar__link--active {
+  color: var(--color-primary);
+}
+
+.navbar__link--active::after {
+  transform: scaleX(1);
+}
+
+/* ── "Contact Us" Nav CTA pill ── */
+.navbar__link--cta {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--border-radius-full);
+  transition: background var(--transition-base),
+              box-shadow var(--transition-base),
+              color var(--transition-base);
+}
+
+/* Remove underline animation for CTA pill */
+.navbar__link--cta::after {
+  display: none;
+}
+
+.navbar__link--cta:hover {
+  background: var(--color-primary-light);
+  color: #fff;
+  box-shadow: var(--shadow-glow-primary);
+}
+
+
+/* ============================================================================
+   7. HERO SECTION
+   ============================================================================
+   Full-viewport hero with background image, dark gradient overlay,
+   centered content, gradient heading text, and dual CTA buttons.
+   ============================================================================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  height: 100vh;
+  padding-top: var(--nav-height);
+}
+
+/* ── Background Image Layer ── */
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: url('assets/hero-bg.png')
+              center / cover no-repeat;
+}
+
+/* ── Dark Gradient Overlay ── */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--gradient-hero-overlay);
+}
+
+/* ── Content ── */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: var(--container-narrow);
+}
+
+/* ── Overline ── */
+.hero__overline {
+  font-size: var(--text-overline);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-3);
+}
+
+/* ── Headline ── */
+.hero__heading {
+  font-size: clamp(2.5rem, 5vw + 1rem, var(--text-display));
+  font-weight: 800;
+  color: var(--color-text-primary);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Description ── */
+.hero__description {
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+  line-height: 1.7;
+}
+
+/* ── CTA Button Group ── */
+.hero__actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ============================================================================
+   8. ABOUT / STATS SECTION
+   ============================================================================
+   Two-column grid on desktop: text on left, stat counters on right.
+   Stats use gradient-colored numbers in a 2×2 sub-grid.
+   ============================================================================ */
+
+.about {
+  background: var(--color-bg-primary);
+  padding-block: var(--space-8);
+  content-visibility: auto;
+}
+
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+/* ── About Description Text ── */
+.about__description {
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Stats Sub-Grid ── */
+.about__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+/* ── Individual Stat Card ── */
+.stat-card {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
+  text-align: center;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Stat Number — gradient colored ── */
+.stat-card__number {
+  display: block;
+  font-size: var(--text-stat-number);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  /* Gradient text effect on numbers */
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Stat Label ── */
+.stat-card__label {
+  display: block;
+  font-size: var(--text-stat-label);
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-top: var(--space-2);
+  line-height: 1.4;
+}
+
+
+/* ============================================================================
+   9. SERVICES GRID
+   ============================================================================
+   CSS Grid section: 3 columns on desktop, 2 on tablet, 1 on mobile.
+   Glassmorphism-style cards with hover lift, glow border, and enhanced shadow.
+   ============================================================================ */
+
+.services {
+  background: var(--color-bg-secondary);
+  padding-block: var(--space-8);
+  content-visibility: auto;
+}
+
+.services__content {
+  text-align: center;
+}
+
+/* ── Grid Layout (Desktop: 3 cols — default) ── */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  text-align: center;
+}
+
+/* ── Service Card ── */
+.service-card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-card);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  text-align: center;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              border-color var(--transition-base),
+              background var(--transition-base);
+}
+
+/* ── Card Hover — lift, glow, gradient bg ── */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(108, 99, 255, 0.3);
+  background: var(--gradient-card-hover);
+}
+
+/* ── Icon Container ── */
+.service-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-4);
+  /* Optional circle wrapper */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: rgba(108, 99, 255, 0.1);
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.service-card__icon i {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.75rem;
+}
+
+/* ── Card Title ── */
+.service-card__title {
+  font-size: var(--text-h3);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* ── Card Description ── */
+.service-card__description {
+  font-size: var(--text-body-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+
+/* ============================================================================
+   10. CTA BANNER SECTION
+   ============================================================================
+   Full-width section with radial gradient glow overlay,
+   centered heading, description, and large primary CTA button.
+   ============================================================================ */
+
+.cta-banner {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+  padding-block: var(--space-8);
+  text-align: center;
+  content-visibility: auto;
+}
+
+/* ── Radial Glow Background ── */
+.cta-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--gradient-glow);
+  opacity: 0.5;
+}
+
+/* ── Content ── */
+.cta-banner__content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+}
+
+/* ── Heading ── */
+.cta-banner__heading {
+  font-size: clamp(2rem, 4vw + 1rem, var(--text-h1));
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Description ── */
+.cta-banner__description {
+  font-size: var(--text-body);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.7;
+}
+
+
+/* ============================================================================
+   11. FOOTER
+   ============================================================================
+   Dark footer with 3-column grid layout (brand, links, contact),
+   styled links with hover transitions, and a subtle bottom copyright bar.
+   ============================================================================ */
+
+.site-footer {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid var(--color-divider);
+  padding-top: var(--space-7);
+  padding-bottom: var(--space-3);
+}
+
+/* ── Footer Content Grid ── */
+.footer__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* ── Footer Brand / Logo ── */
+.footer__logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.footer__logo-accent {
+  color: var(--color-primary);
+}
+
+.footer__tagline {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-2);
+}
+
+/* ── Footer Column Titles ── */
+.footer__col-title {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-3);
+}
+
+/* ── Footer Links ── */
+.footer__links ul,
+.footer__contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links li,
+.footer__contact li {
+  margin-bottom: var(--space-2);
+}
+
+.footer__links a,
+.footer__contact a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: var(--text-body-sm);
+  transition: color var(--transition-base);
+}
+
+.footer__links a:hover,
+.footer__contact a:hover {
+  color: var(--color-primary);
+}
+
+/* ── Footer Social Icons ── */
+.footer__social {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(108, 99, 255, 0.1);
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  transition: background var(--transition-base),
+              color var(--transition-base),
+              transform var(--transition-base);
+}
+
+.footer__social-link:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* ── Footer Bottom Copyright Bar ── */
+.footer__bottom {
+  padding-top: var(--space-4);
+  text-align: center;
+  font-size: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+
+/* ============================================================================
+   12. BUTTON SYSTEM
+   ============================================================================
+   Base .btn class + two variants: .btn--primary (gradient + glow pulse)
+   and .btn--outline (transparent bg, border, hover fill). Both are pill-shaped
+   with 0.3s transitions. Large modifier: .btn--lg.
+   ============================================================================ */
+
+/* ── Base Button ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-primary);
+  font-size: var(--text-button);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.875rem 2rem;
+  border-radius: var(--border-radius-full);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--transition-base),
+              box-shadow var(--transition-base),
+              background var(--transition-base),
+              border-color var(--transition-base),
+              color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Primary Button (Gradient + Glow) ── */
+.btn--primary {
+  background: var(--gradient-cta);
+  color: #ffffff;
+  box-shadow: var(--shadow-glow-primary);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(108, 99, 255, 0.6),
+              0 0 60px rgba(108, 99, 255, 0.2);
+  /* Stop pulse on hover — hover shadow takes over */
+  animation: none;
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+}
+
+/* ── Outline Button ── */
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid var(--color-border);
+}
+
+.btn--outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(108, 99, 255, 0.08);
+  box-shadow: var(--shadow-glow-primary);
+}
+
+/* ── Large Button Modifier ── */
+.btn--lg {
+  font-size: 1.125rem;
+  padding: 1rem 2.5rem;
+}
+
+
+/* ============================================================================
+   13. ANIMATIONS & KEYFRAMES
+   ============================================================================
+   - fadeInUp:   scroll-reveal entrance animation
+   - float:      subtle floating motion for hero decorative elements
+   - glowPulse:  pulsing glow on primary CTA buttons
+   All animations use transform and opacity only (compositor-friendly).
+   ============================================================================ */
+
+/* ── Fade In Up — used for scroll reveal ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Float — subtle vertical oscillation ── */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ── Glow Pulse — pulsing box-shadow on primary buttons ── */
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(108, 99, 255, 0.7),
+                0 0 60px rgba(108, 99, 255, 0.3);
+  }
+}
+
+/* ── Float animation utility (apply to decorative elements) ── */
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+
+/* ============================================================================
+   14. SCROLL REVEAL
+   ============================================================================
+   Elements with .reveal-on-scroll start invisible and translated down.
+   When the IntersectionObserver (in script.js) adds .revealed, they
+   transition smoothly into view. Staggered delays on service cards.
+   ============================================================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Scroll-to-Top Button ── */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: 1.125rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base),
+              visibility var(--transition-base),
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.scroll-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  box-shadow: var(--shadow-glow-primary);
+  transform: translateY(-3px);
+}
+
+/* ── Stagger children in the services grid ── */
+.services__grid .service-card:nth-child(1) { transition-delay: 0s; }
+.services__grid .service-card:nth-child(2) { transition-delay: 0.1s; }
+.services__grid .service-card:nth-child(3) { transition-delay: 0.2s; }
+.services__grid .service-card:nth-child(4) { transition-delay: 0.3s; }
+.services__grid .service-card:nth-child(5) { transition-delay: 0.4s; }
+.services__grid .service-card:nth-child(6) { transition-delay: 0.5s; }
+
+
+/* ============================================================================
+   15. FOCUS STATES (Accessibility)
+   ============================================================================
+   All interactive elements get a visible focus ring when navigated via keyboard.
+   ============================================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+
+/* ============================================================================
+   16. RESPONSIVE — TABLET (≤1024px)
+   ============================================================================
+   Two-column grids, condensed spacing, adjusted typography.
+   ============================================================================ */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :root {
+    --text-display:   3.5rem;
+    --text-h1:        2.5rem;
+    --text-h2:        2rem;
+    --text-h3:        1.375rem;
+    --text-body:      1.0625rem;
+  }
+
+  /* About section: tighter gap */
+  .about__content {
+    gap: var(--space-6);
+  }
+
+  /* Services: 2-column grid */
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer: 2-column layout */
+  .footer__content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ============================================================================
+   17. RESPONSIVE — MOBILE (≤768px)
+   ============================================================================
+   Single-column layouts, hamburger nav, stacked elements, smaller type,
+   adjusted padding.
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --text-display:       2.5rem;
+    --text-h1:            2rem;
+    --text-h2:            1.75rem;
+    --text-h3:            1.25rem;
+    --text-body:          1rem;
+    --container-padding:  var(--space-3);
+  }
+
+  /* ── Show hamburger toggle ── */
+  .navbar__toggle {
+    display: flex;
+  }
+
+  /* ── Mobile menu: hidden by default, slide-down reveal ── */
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--color-bg-secondary);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: var(--space-3) 0;
+    border-bottom: 1px solid var(--color-border);
+    /* Slide-down animation start state */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity var(--transition-base),
+                transform var(--transition-base);
+  }
+
+  /* ── Menu open state ── */
+  .navbar__menu--open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── Mobile link styles ── */
+  .navbar__menu .navbar__link {
+    font-size: 1.125rem;
+    padding: var(--space-3);
+    width: 100%;
+    text-align: center;
+    display: block;
+  }
+
+  /* Remove underline pseudo-element in mobile nav */
+  .navbar__menu .navbar__link::after {
+    display: none;
+  }
+
+  /* ── Mobile CTA link — reset pill for full-width ── */
+  .navbar__menu .navbar__link--cta {
+    margin: var(--space-2) var(--space-3);
+    border-radius: var(--border-radius-full);
+    text-align: center;
+    width: auto;
+  }
+
+  /* ── Hero adjustments ── */
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero__heading {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* ── About: single column ── */
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: center;
+  }
+
+  /* Stats stay as 2×2 grid on mobile */
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* ── Services: single column ── */
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services__content {
+    text-align: center;
+  }
+
+  /* ── CTA Banner ── */
+  .cta-banner__heading {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+
+  /* ── Footer: single column, centered ── */
+  .footer__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+
+/* ============================================================================
+   18. REDUCED MOTION
+   ============================================================================
+   Disables all animations and transitions for users who prefer reduced motion.
+   Scroll-reveal elements are made immediately visible.
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
