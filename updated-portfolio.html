@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ════════════════════════════════════════════════════════════════
+       META & SEO
+       ════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sajal Shrivastava — Web Developer & Designer. Explore my portfolio showcasing creative projects, technical skills, and a passion for building beautiful digital experiences.">
+  <meta name="keywords" content="Sajal Shrivastava, Web Developer, Frontend Developer, Portfolio, Projects, UI/UX">
+  <meta name="author" content="Sajal Shrivastava">
+  <title>Sajal Shrivastava | Portfolio</title>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PRECONNECT & FONTS (Google Fonts — Inter)
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FONT AWESOME 6 CDN
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MAIN STYLESHEET
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="portfolio-styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SKIP LINK — Accessibility: keyboard users can jump to main content
+       ════════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+
+      <!-- Logo -->
+      <a href="#hero" class="navbar__logo" id="navbar-logo" aria-label="Sajal Shrivastava — Home">
+        <span class="navbar__logo-text">Sajal<span class="navbar__logo-accent">.</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        class="navbar__toggle"
+        id="navbar-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="navbar__menu" id="nav-menu" role="list">
+        <li><a href="#hero" class="navbar__link" id="nav-link-home">Home</a></li>
+        <li><a href="#about" class="navbar__link" id="nav-link-about">About</a></li>
+        <li><a href="#projects" class="navbar__link" id="nav-link-projects">Projects</a></li>
+        <li><a href="#contact" class="navbar__link navbar__link--cta" id="nav-link-contact">Contact Me</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button
+        class="dark-mode-toggle"
+        id="dark-mode-toggle"
+        aria-label="Toggle dark/light mode"
+        title="Toggle theme"
+      >
+        <i class="fas fa-moon dark-mode-toggle__icon dark-mode-toggle__icon--dark" aria-hidden="true"></i>
+        <i class="fas fa-sun dark-mode-toggle__icon dark-mode-toggle__icon--light" aria-hidden="true"></i>
+        <span class="dark-mode-toggle__slider"></span>
+      </button>
+
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCROLL PROGRESS BAR — fills from left to right as you scroll
+       ═══════════════════════════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+
+      <!-- Background image layer -->
+      <div class="hero__bg" aria-hidden="true"></div>
+
+      <!-- Dark gradient overlay -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- Animated floating particles -->
+      <div class="hero__particles" aria-hidden="true">
+        <div class="particle particle--1"></div>
+        <div class="particle particle--2"></div>
+        <div class="particle particle--3"></div>
+        <div class="particle particle--4"></div>
+        <div class="particle particle--5"></div>
+        <div class="particle particle--6"></div>
+      </div>
+
+      <!-- Hero content -->
+      <div class="hero__content container">
+        <p class="hero__overline reveal">Hello, I'm</p>
+
+        <h1 class="hero__heading reveal" id="hero-heading">
+          Sajal <span class="text-gradient">Shrivastava</span>
+        </h1>
+
+        <p class="hero__tagline reveal">
+          Web Developer &amp; Creative Designer
+        </p>
+
+        <p class="hero__description reveal">
+          I craft pixel-perfect, responsive web experiences that blend 
+          aesthetics with functionality. Passionate about turning ideas 
+          into elegant digital solutions.
+        </p>
+
+        <div class="hero__actions reveal">
+          <a href="#projects" class="btn btn--primary" id="hero-cta-projects">
+            <i class="fas fa-rocket" aria-hidden="true"></i> View My Work
+          </a>
+          <a href="#contact" class="btn btn--outline" id="hero-cta-contact">
+            <i class="fas fa-envelope" aria-hidden="true"></i> Get in Touch
+          </a>
+        </div>
+
+        <!-- Social links in hero -->
+        <div class="hero__social reveal">
+          <a href="https://github.com/sajal2512" class="hero__social-link" id="hero-social-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com" class="hero__social-link" id="hero-social-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://x.com" class="hero__social-link" id="hero-social-twitter" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span class="hero__scroll-text">Scroll Down</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         STATS COUNTER SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="stats" id="stats" aria-label="Statistics">
+      <div class="stats__content container">
+        <div class="stat-card reveal" id="stat-projects">
+          <div class="stat-card__icon"><i class="fas fa-code" aria-hidden="true"></i></div>
+          <span class="stat-card__number" data-target="15">0</span>
+          <span class="stat-card__suffix">+</span>
+          <p class="stat-card__label">Projects Completed</p>
+        </div>
+        <div class="stat-card reveal" id="stat-hours">
+          <div class="stat-card__icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+          <span class="stat-card__number" data-target="500">0</span>
+          <span class="stat-card__suffix">+</span>
+          <p class="stat-card__label">Hours of Coding</p>
+        </div>
+        <div class="stat-card reveal" id="stat-tech">
+          <div class="stat-card__icon"><i class="fas fa-laptop-code" aria-hidden="true"></i></div>
+          <span class="stat-card__number" data-target="8">0</span>
+          <span class="stat-card__suffix"></span>
+          <p class="stat-card__label">Technologies</p>
+        </div>
+        <div class="stat-card reveal" id="stat-coffee">
+          <div class="stat-card__icon"><i class="fas fa-mug-hot" aria-hidden="true"></i></div>
+          <span class="stat-card__number" data-target="999">0</span>
+          <span class="stat-card__suffix">+</span>
+          <p class="stat-card__label">Cups of Coffee</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="about__content container">
+
+        <!-- Text Column -->
+        <div class="about__text reveal">
+          <p class="section-overline">Who I Am</p>
+          <h2 class="section-heading" id="about-heading">About Me</h2>
+          <p class="about__description">
+            I'm a passionate web developer and designer with a keen eye for detail 
+            and a love for creating clean, modern digital experiences. Currently 
+            exploring the latest in frontend technologies, I enjoy building 
+            responsive websites and interactive applications that make a real impact.
+          </p>
+          <p class="about__description">
+            When I'm not coding, you'll find me exploring new design trends, 
+            contributing to open source, or diving deep into the world of 
+            UI/UX to create interfaces that users love.
+          </p>
+        </div>
+
+        <!-- Skills with Animated Progress Bars -->
+        <div class="about__skills reveal">
+          <h3 class="about__skills-title">My Skills</h3>
+          <div class="skills-bars" role="list" aria-label="Technical skills">
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-html5" aria-hidden="true"></i> HTML5</span>
+                <span class="skill-bar__percent" data-target="95">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS3</span>
+                <span class="skill-bar__percent" data-target="90">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</span>
+                <span class="skill-bar__percent" data-target="85">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-react" aria-hidden="true"></i> React</span>
+                <span class="skill-bar__percent" data-target="75">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="75"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
+                <span class="skill-bar__percent" data-target="70">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-bar" role="listitem">
+              <div class="skill-bar__header">
+                <span class="skill-bar__name"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+                <span class="skill-bar__percent" data-target="65">0%</span>
+              </div>
+              <div class="skill-bar__track">
+                <div class="skill-bar__fill" data-width="65"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         PROJECTS SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="projects" id="projects" aria-labelledby="projects-heading">
+      <div class="projects__content container">
+
+        <p class="section-overline reveal">My Work</p>
+        <h2 class="section-heading reveal" id="projects-heading">Featured Projects</h2>
+        <p class="section-subheading reveal">
+          Here are some of my recent projects that showcase my skills and creativity.
+        </p>
+
+        <div class="projects__grid">
+
+          <!-- Project 1 — E-Commerce Store -->
+          <article class="project-card reveal" id="project-ecommerce">
+            <div class="project-card__image-wrapper">
+              <img 
+                src="assets/project-ecommerce.png" 
+                alt="TrendVault e-commerce dashboard showing product listings with cart functionality" 
+                class="project-card__image"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://github.com/sajal2512" class="project-card__link" aria-label="View source code for TrendVault" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="View live demo of TrendVault" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">TrendVault — E-Commerce Store</h3>
+              <p class="project-card__description">
+                A full-featured e-commerce platform with product filtering, cart management, 
+                and a responsive dashboard. Built with modern UI patterns and smooth interactions.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">REST API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 — Weather App -->
+          <article class="project-card reveal" id="project-weather">
+            <div class="project-card__image-wrapper">
+              <img 
+                src="assets/project-weather.png" 
+                alt="SkyFlow Weather app showing current conditions and 5-day forecast" 
+                class="project-card__image"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://github.com/sajal2512" class="project-card__link" aria-label="View source code for SkyFlow Weather" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="View live demo of SkyFlow Weather" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">SkyFlow — Weather Dashboard</h3>
+              <p class="project-card__description">
+                A beautiful weather application with real-time data, 5-day forecasts, 
+                and stunning visualizations. Features location search and responsive design.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">API Integration</span>
+                <span class="tag">CSS Grid</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 — Task Manager -->
+          <article class="project-card reveal" id="project-taskmanager">
+            <div class="project-card__image-wrapper">
+              <img 
+                src="assets/project-taskmanager.png" 
+                alt="TaskFlow kanban board with To Do, In Progress, and Done columns" 
+                class="project-card__image"
+                loading="lazy"
+                width="600"
+                height="400"
+              >
+              <div class="project-card__overlay">
+                <div class="project-card__links">
+                  <a href="https://github.com/sajal2512" class="project-card__link" aria-label="View source code for TaskFlow" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="#" class="project-card__link" aria-label="View live demo of TaskFlow" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">TaskFlow — Project Manager</h3>
+              <p class="project-card__description">
+                A kanban-style task management app with drag-and-drop functionality, 
+                team collaboration features, and progress tracking across projects.
+              </p>
+              <div class="project-card__tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Drag & Drop</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+
+      <!-- Radial glow background -->
+      <div class="contact__bg" aria-hidden="true"></div>
+
+      <div class="contact__content container">
+
+        <p class="section-overline reveal">Get In Touch</p>
+        <h2 class="section-heading reveal" id="contact-heading">Let's Work Together</h2>
+        <p class="section-subheading reveal">
+          Have a project in mind or just want to say hi? I'd love to hear from you.
+        </p>
+
+        <div class="contact__grid">
+
+          <!-- Contact Info Cards -->
+          <div class="contact__info reveal">
+            <div class="contact-info-card" id="contact-email-card">
+              <div class="contact-info-card__icon">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__text">
+                <h4>Email</h4>
+                <a href="mailto:sajal.shrivastava@example.com" id="contact-email-link">sajal.shrivastava@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card" id="contact-location-card">
+              <div class="contact-info-card__icon">
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__text">
+                <h4>Location</h4>
+                <p>India</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card" id="contact-socials-card">
+              <div class="contact-info-card__icon">
+                <i class="fas fa-share-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__text">
+                <h4>Socials</h4>
+                <div class="contact__social-links">
+                  <a href="https://github.com/sajal2512" aria-label="GitHub" target="_blank" rel="noopener noreferrer" id="contact-social-github">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" id="contact-social-linkedin">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                  </a>
+                  <a href="https://x.com" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer" id="contact-social-twitter">
+                    <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form reveal" id="contact-form" aria-label="Contact form" novalidate>
+            <div class="contact-form__group">
+              <label for="contact-name" class="contact-form__label">Your Name</label>
+              <input 
+                type="text" 
+                id="contact-name" 
+                name="name" 
+                class="contact-form__input" 
+                placeholder="John Doe" 
+                required
+                autocomplete="name"
+                aria-describedby="contact-name-error"
+              >
+              <span class="contact-form__error" id="contact-name-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contact-email" class="contact-form__label">Your Email</label>
+              <input 
+                type="email" 
+                id="contact-email" 
+                name="email" 
+                class="contact-form__input" 
+                placeholder="john@example.com" 
+                required
+                autocomplete="email"
+                aria-describedby="contact-email-error"
+              >
+              <span class="contact-form__error" id="contact-email-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contact-subject" class="contact-form__label">Subject</label>
+              <input 
+                type="text" 
+                id="contact-subject" 
+                name="subject" 
+                class="contact-form__input" 
+                placeholder="Project Inquiry"
+                required
+                aria-describedby="contact-subject-error"
+              >
+              <span class="contact-form__error" id="contact-subject-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contact-message" class="contact-form__label">Message</label>
+              <textarea 
+                id="contact-message" 
+                name="message" 
+                class="contact-form__input contact-form__textarea" 
+                placeholder="Tell me about your project…" 
+                rows="5"
+                required
+                aria-describedby="contact-message-error"
+              ></textarea>
+              <span class="contact-form__error" id="contact-message-error" role="alert" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="contact-submit">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message
+            </button>
+
+            <!-- Success message (hidden by default) -->
+            <div class="contact-form__success" id="contact-success" aria-live="polite" hidden>
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              <p>Thank you! Your message has been sent successfully.</p>
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer__content container">
+
+      <!-- Brand Column -->
+      <div class="footer__brand">
+        <span class="footer__logo-text">Sajal<span class="footer__logo-accent">.</span></span>
+        <p class="footer__tagline">Building the web, one pixel at a time.</p>
+
+        <!-- Social Media Icons -->
+        <div class="footer__social" id="footer-social">
+          <a href="https://github.com/sajal2512" class="footer__social-link" id="social-github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com" class="footer__social-link" id="social-linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="https://x.com" class="footer__social-link" id="social-twitter" aria-label="Twitter / X" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links Column -->
+      <div class="footer__links">
+        <h4 class="footer__col-title">Quick Links</h4>
+        <ul role="list">
+          <li><a href="#hero" id="footer-link-home">Home</a></li>
+          <li><a href="#about" id="footer-link-about">About</a></li>
+          <li><a href="#projects" id="footer-link-projects">Projects</a></li>
+          <li><a href="#contact" id="footer-link-contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Column -->
+      <div class="footer__contact">
+        <h4 class="footer__col-title">Contact</h4>
+        <ul role="list">
+          <li>
+            <a href="mailto:sajal.shrivastava@example.com" id="footer-email">
+              <i class="fas fa-envelope" aria-hidden="true"></i> sajal.shrivastava@example.com
+            </a>
+          </li>
+          <li>
+            <span>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i> India
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer__bottom container">
+      <p>&copy; 2025 Sajal Shrivastava. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCROLL-TO-TOP BUTTON
+       ═══════════════════════════════════════════════════════════════ -->
+  <button
+    class="scroll-to-top"
+    id="scroll-to-top"
+    aria-label="Scroll to top"
+    title="Back to top"
+  >
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       SCRIPTS — Placed at end of body for performance
+       ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    /* ──────────────────────────────────────────────────────────────
+       1. DARK MODE TOGGLE
+       Allows users to switch between dark (default) and light themes.
+       Saves preference to LocalStorage for persistence across visits.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var STORAGE_KEY = 'sajal-portfolio-theme';
+      var toggle = document.getElementById('dark-mode-toggle');
+      var body = document.body;
+
+      // Retrieve saved theme preference or default to dark
+      var savedTheme = localStorage.getItem(STORAGE_KEY);
+
+      // Apply saved preference immediately (before paint if possible)
+      if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        toggle.setAttribute('aria-label', 'Switch to dark mode');
+      }
+
+      toggle.addEventListener('click', function () {
+        body.classList.toggle('light-mode');
+
+        var isLight = body.classList.contains('light-mode');
+        localStorage.setItem(STORAGE_KEY, isLight ? 'light' : 'dark');
+        toggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+
+        // Add a subtle ripple feedback class
+        toggle.classList.add('dark-mode-toggle--animating');
+        setTimeout(function () {
+          toggle.classList.remove('dark-mode-toggle--animating');
+        }, 500);
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       2. DYNAMIC NAVIGATION SCROLL EFFECT
+       Changes the navbar background color, opacity, and shadow on
+       scroll. Uses multiple scroll thresholds for a progressive
+       effect with a smooth color shift from transparent to solid.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var header = document.getElementById('site-header');
+      var lastScrollY = 0;
+      var ticking = false;
+
+      function updateNav() {
+        var scrollY = window.scrollY;
+
+        // Toggle scrolled state at 50px
+        header.classList.toggle('nav--scrolled', scrollY > 50);
+
+        // Add a "deeply scrolled" state for color shift at 300px
+        header.classList.toggle('nav--scrolled-deep', scrollY > 300);
+
+        // Auto-hide/show navbar on scroll direction (optional enhancement)
+        if (scrollY > 400) {
+          if (scrollY > lastScrollY && scrollY - lastScrollY > 10) {
+            header.classList.add('nav--hidden');
+          } else if (lastScrollY - scrollY > 10) {
+            header.classList.remove('nav--hidden');
+          }
+        } else {
+          header.classList.remove('nav--hidden');
+        }
+
+        lastScrollY = scrollY;
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNav);
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       3. MOBILE HAMBURGER MENU TOGGLE
+       Toggles the navbar menu visibility and updates aria-expanded.
+       Pressing Escape also closes the menu.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var toggle = document.getElementById('navbar-toggle');
+      var menu   = document.getElementById('nav-menu');
+
+      // Toggle menu on button click
+      toggle.addEventListener('click', function () {
+        var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        menu.classList.toggle('navbar__menu--open');
+      });
+
+      // Close menu on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('navbar__menu--open')) {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('navbar__menu--open');
+          toggle.focus();
+        }
+      });
+
+      // Close menu when a nav link is clicked (for smooth scroll UX)
+      menu.querySelectorAll('.navbar__link').forEach(function (link) {
+        link.addEventListener('click', function () {
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.classList.remove('navbar__menu--open');
+        });
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       4. INTERSECTION OBSERVER — SCROLL REVEAL
+       Observes all elements with the class 'reveal'. When an element
+       enters the viewport (15% threshold), the 'revealed' class is
+       added and the element is unobserved to avoid re-triggering.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      // Respect user's motion preferences
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        // Immediately reveal everything if user prefers reduced motion
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('revealed');
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.reveal').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       5. SCROLL-TO-TOP BUTTON
+       Shows the button when user scrolls past 400px. Clicking it
+       smoothly scrolls the page back to the top.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var btn = document.getElementById('scroll-to-top');
+
+      window.addEventListener('scroll', function () {
+        btn.classList.toggle('scroll-to-top--visible', window.scrollY > 400);
+      }, { passive: true });
+
+      btn.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       6. ACTIVE NAV LINK HIGHLIGHTING
+       Uses IntersectionObserver to track which section is in view
+       and applies .navbar__link--active to the corresponding link.
+       The active link gets a vibrant underline and color change.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.navbar__link');
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function (link) {
+              link.classList.remove('navbar__link--active');
+              if (link.getAttribute('href') === '#' + entry.target.id) {
+                link.classList.add('navbar__link--active');
+              }
+            });
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       7. CONTACT FORM VALIDATION
+       Full client-side validation with:
+       • Required field checks for name, email, subject, message
+       • Email format validation via regex
+       • Inline error messages that appear/disappear dynamically
+       • Visual input state changes (red border on error, green on valid)
+       • Real-time validation on blur and input events
+       • Submit-time validation with focus on first error
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var form = document.getElementById('contact-form');
+      var successMsg = document.getElementById('contact-success');
+
+      // Field configurations
+      var fields = [
+        {
+          id: 'contact-name',
+          errorId: 'contact-name-error',
+          rules: [
+            { test: function (v) { return v.trim().length > 0; }, message: 'Please enter your name.' },
+            { test: function (v) { return v.trim().length >= 2; }, message: 'Name must be at least 2 characters.' }
+          ]
+        },
+        {
+          id: 'contact-email',
+          errorId: 'contact-email-error',
+          rules: [
+            { test: function (v) { return v.trim().length > 0; }, message: 'Please enter your email address.' },
+            { test: function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()); }, message: 'Please enter a valid email address (e.g., name@example.com).' }
+          ]
+        },
+        {
+          id: 'contact-subject',
+          errorId: 'contact-subject-error',
+          rules: [
+            { test: function (v) { return v.trim().length > 0; }, message: 'Please enter a subject.' }
+          ]
+        },
+        {
+          id: 'contact-message',
+          errorId: 'contact-message-error',
+          rules: [
+            { test: function (v) { return v.trim().length > 0; }, message: 'Please enter your message.' },
+            { test: function (v) { return v.trim().length >= 10; }, message: 'Message should be at least 10 characters long.' }
+          ]
+        }
+      ];
+
+      /**
+       * Validates a single field and shows/hides error.
+       * Returns true if valid, false if invalid.
+       */
+      function validateField(fieldConfig) {
+        var input = document.getElementById(fieldConfig.id);
+        var errorSpan = document.getElementById(fieldConfig.errorId);
+        var value = input.value;
+
+        for (var i = 0; i < fieldConfig.rules.length; i++) {
+          if (!fieldConfig.rules[i].test(value)) {
+            // Show error
+            errorSpan.textContent = fieldConfig.rules[i].message;
+            errorSpan.classList.add('contact-form__error--visible');
+            input.classList.add('contact-form__input--error');
+            input.classList.remove('contact-form__input--valid');
+            input.setAttribute('aria-invalid', 'true');
+            return false;
+          }
+        }
+
+        // Clear error — field is valid
+        errorSpan.textContent = '';
+        errorSpan.classList.remove('contact-form__error--visible');
+        input.classList.remove('contact-form__input--error');
+        input.classList.add('contact-form__input--valid');
+        input.setAttribute('aria-invalid', 'false');
+        return true;
+      }
+
+      /**
+       * Clears validation state from a field (used on focus).
+       */
+      function clearFieldState(fieldConfig) {
+        var input = document.getElementById(fieldConfig.id);
+        var errorSpan = document.getElementById(fieldConfig.errorId);
+        errorSpan.textContent = '';
+        errorSpan.classList.remove('contact-form__error--visible');
+        input.classList.remove('contact-form__input--error');
+        // Don't remove valid state on focus — feels natural
+      }
+
+      // Attach real-time validation listeners
+      fields.forEach(function (fieldConfig) {
+        var input = document.getElementById(fieldConfig.id);
+
+        // Validate on blur (leaving the field)
+        input.addEventListener('blur', function () {
+          if (input.value.trim().length > 0) {
+            validateField(fieldConfig);
+          }
+        });
+
+        // Re-validate on input if field was in error state
+        input.addEventListener('input', function () {
+          if (input.classList.contains('contact-form__input--error')) {
+            validateField(fieldConfig);
+          }
+        });
+      });
+
+      // Submit handler
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var allValid = true;
+        var firstInvalidInput = null;
+
+        fields.forEach(function (fieldConfig) {
+          var isValid = validateField(fieldConfig);
+          if (!isValid && allValid) {
+            firstInvalidInput = document.getElementById(fieldConfig.id);
+            allValid = false;
+          } else if (!isValid) {
+            allValid = false;
+          }
+        });
+
+        if (!allValid) {
+          // Focus the first invalid field and add a shake animation
+          if (firstInvalidInput) {
+            firstInvalidInput.focus();
+            firstInvalidInput.closest('.contact-form__group').classList.add('shake');
+            setTimeout(function () {
+              firstInvalidInput.closest('.contact-form__group').classList.remove('shake');
+            }, 600);
+          }
+          return;
+        }
+
+        // All valid — show success message
+        successMsg.hidden = false;
+        form.reset();
+
+        // Remove valid states from all inputs
+        fields.forEach(function (fieldConfig) {
+          var input = document.getElementById(fieldConfig.id);
+          input.classList.remove('contact-form__input--valid');
+          input.removeAttribute('aria-invalid');
+        });
+
+        // Hide success message after 5 seconds
+        setTimeout(function () {
+          successMsg.hidden = true;
+        }, 5000);
+      });
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       8. TYPING EFFECT FOR HERO TAGLINE
+       Creates a subtle typing animation for the tagline.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var tagline = document.querySelector('.hero__tagline');
+      if (!tagline) return;
+      
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      var roles = [
+        'Web Developer & Creative Designer',
+        'Frontend Enthusiast',
+        'UI/UX Explorer',
+        'Open Source Contributor'
+      ];
+      var roleIndex = 0;
+      var charIndex = 0;
+      var isDeleting = false;
+      var typingSpeed = 80;
+
+      function type() {
+        var currentRole = roles[roleIndex];
+
+        if (isDeleting) {
+          tagline.textContent = currentRole.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          tagline.textContent = currentRole.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+          setTimeout(function () {
+            isDeleting = true;
+            type();
+          }, 2000);
+          return;
+        }
+
+        if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+
+        var speed = isDeleting ? typingSpeed / 2 : typingSpeed;
+        setTimeout(type, speed);
+      }
+
+      // Start typing after hero reveal animation
+      setTimeout(type, 1500);
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       9. SCROLL PROGRESS BAR
+       A gradient bar fixed at the very top of the page that fills
+       from left to right as the user scrolls down.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var progressBar = document.getElementById('scroll-progress-bar');
+
+      function updateProgress() {
+        var scrollTop = window.scrollY;
+        var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        var scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = scrollPercent + '%';
+      }
+
+      window.addEventListener('scroll', updateProgress, { passive: true });
+      updateProgress(); // initial call
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       10. ANIMATED STATS COUNTER
+       When the stats section scrolls into view, counts each number
+       from 0 up to its data-target value with an easing effect.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var statsSection = document.getElementById('stats');
+      if (!statsSection) return;
+
+      var counters = statsSection.querySelectorAll('.stat-card__number');
+      var hasAnimated = false;
+
+      function animateCounter(el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var duration = 2000; // ms
+        var startTime = null;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          var elapsed = timestamp - startTime;
+          var progress = Math.min(elapsed / duration, 1);
+          // Ease-out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.floor(eased * target);
+          el.textContent = current;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = target;
+          }
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            counters.forEach(function (counter) {
+              animateCounter(counter);
+            });
+            observer.unobserve(statsSection);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      observer.observe(statsSection);
+    })();
+
+
+    /* ──────────────────────────────────────────────────────────────
+       11. ANIMATED SKILL BARS
+       When the skills section scrolls into view, the bars fill from
+       0% to their data-width value with a staggered animation and
+       the percentage label counts up simultaneously.
+       ────────────────────────────────────────────────────────────── */
+    (function () {
+      var skillBars = document.querySelectorAll('.skill-bar__fill');
+      if (skillBars.length === 0) return;
+
+      var hasAnimated = false;
+
+      function animateSkillBar(bar, index) {
+        var targetWidth = parseInt(bar.getAttribute('data-width'), 10);
+        var percentLabel = bar.closest('.skill-bar').querySelector('.skill-bar__percent');
+
+        setTimeout(function () {
+          bar.style.width = targetWidth + '%';
+
+          // Animate the percentage text
+          var duration = 1500;
+          var startTime = null;
+
+          function countUp(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var elapsed = timestamp - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * targetWidth);
+            percentLabel.textContent = current + '%';
+
+            if (progress < 1) {
+              requestAnimationFrame(countUp);
+            } else {
+              percentLabel.textContent = targetWidth + '%';
+            }
+          }
+
+          requestAnimationFrame(countUp);
+        }, index * 150); // staggered delay
+      }
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            skillBars.forEach(function (bar, index) {
+              animateSkillBar(bar, index);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      var skillsContainer = document.querySelector('.skills-bars');
+      if (skillsContainer) observer.observe(skillsContainer);
+    })();
+  </script>
+
+</body>
+</html>
