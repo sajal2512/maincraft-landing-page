@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ════════════════════════════════════════════════════════════════
+       META & SEO
+       ════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the latest insights on web development, AI, UI/UX design, and cloud architecture from the MainCrafts Technology team.">
+  <title>Blog — MainCrafts Technology</title>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PRECONNECT & FONTS
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FONT AWESOME 6 CDN
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MAIN STYLESHEET
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SKIP LINK — Accessibility
+       ════════════════════════════════════════════════════════════════ -->
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+
+      <!-- Logo -->
+      <a href="landing.html" class="navbar__logo" id="navbar-logo" aria-label="MainCrafts Technology — Home">
+        <span class="navbar__logo-text">Main<span class="navbar__logo-accent">Crafts</span></span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        class="navbar__toggle"
+        id="navbar-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navbar-menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <!-- Navigation Links -->
+      <ul class="navbar__menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="landing.html" class="navbar__link" role="menuitem" id="nav-home">Home</a></li>
+        <li role="none"><a href="blog.html" class="navbar__link navbar__link--active" role="menuitem" id="nav-blog">Blog</a></li>
+        <li role="none"><a href="portfolio.html" class="navbar__link" role="menuitem" id="nav-portfolio">Portfolio</a></li>
+        <li role="none"><a href="#contact" class="navbar__link" role="menuitem" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       MAIN CONTENT
+       ═══════════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── Blog Hero ── -->
+    <section class="blog-hero" id="blog-hero" aria-label="Blog introduction">
+      <span class="blog-hero__overline">
+        <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+        Our Blog
+      </span>
+      <h1 class="blog-hero__title">
+        Insights & <span class="gradient-text">Ideas</span>
+      </h1>
+      <p class="blog-hero__subtitle">
+        Dive into our latest articles on technology, design, and innovation. Stay informed with expert perspectives from the MainCrafts team.
+      </p>
+    </section>
+
+
+    <!-- ── Search Bar ── -->
+    <section class="search-section container" aria-label="Search blog posts">
+      <div class="search-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-wrapper__icon" aria-hidden="true"></i>
+        <input
+          type="search"
+          class="search-wrapper__input"
+          id="blog-search"
+          placeholder="Search articles by title..."
+          aria-label="Search blog posts by title"
+        >
+      </div>
+    </section>
+
+
+    <!-- ── Blog Card Grid ── -->
+    <section class="blog-grid-section container" aria-label="Blog posts">
+      <div class="blog-grid" id="blog-grid">
+
+        <!-- ╔════════════════════════════════════╗
+             ║  CARD 1 — AI in Web Development    ║
+             ╚════════════════════════════════════╝ -->
+        <article class="blog-card reveal" id="blog-card-1" data-title="The Future of AI in Web Development">
+          <div class="blog-card__image-wrapper">
+            <img
+              src="assets/blog-ai.png"
+              alt="Futuristic AI brain composed of circuit patterns hovering over a laptop displaying a web layout, surrounded by holographic UI elements"
+              class="blog-card__image"
+              loading="lazy"
+            >
+            <span class="blog-card__category" data-cat="ai">AI & ML</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                June 18, 2026
+              </span>
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                6 min read
+              </span>
+            </div>
+            <h2 class="blog-card__title">The Future of AI in Web Development</h2>
+            <p class="blog-card__excerpt">
+              Artificial intelligence is reshaping the way we build for the web. From intelligent code assistants to automated testing, explore how AI is transforming every stage of the development lifecycle.
+            </p>
+            <a href="blog-post-1.html" class="blog-card__read-more" id="read-more-1" aria-label="Read full article: The Future of AI in Web Development">
+              Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ╔════════════════════════════════════╗
+             ║  CARD 2 — Mastering CSS Grid       ║
+             ╚════════════════════════════════════╝ -->
+        <article class="blog-card reveal" id="blog-card-2" data-title="Mastering CSS Grid: A Complete Guide">
+          <div class="blog-card__image-wrapper">
+            <img
+              src="assets/blog-css-grid.png"
+              alt="Glowing purple and teal grid lines forming a responsive web layout on a dark workspace with floating browser windows"
+              class="blog-card__image"
+              loading="lazy"
+            >
+            <span class="blog-card__category" data-cat="webdev">Web Dev</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                June 12, 2026
+              </span>
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                8 min read
+              </span>
+            </div>
+            <h2 class="blog-card__title">Mastering CSS Grid: A Complete Guide</h2>
+            <p class="blog-card__excerpt">
+              CSS Grid has revolutionized layout design on the web. Learn how to harness its power with practical examples — from basic two-column layouts to complex responsive dashboard grids.
+            </p>
+            <a href="blog-post-2.html" class="blog-card__read-more" id="read-more-2" aria-label="Read full article: Mastering CSS Grid: A Complete Guide">
+              Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ╔════════════════════════════════════╗
+             ║  CARD 3 — Intuitive UX Design      ║
+             ╚════════════════════════════════════╝ -->
+        <article class="blog-card reveal" id="blog-card-3" data-title="Designing Intuitive User Experiences">
+          <div class="blog-card__image-wrapper">
+            <img
+              src="assets/blog-ux.png"
+              alt="Designer at workspace with floating holographic UI wireframes, user flow diagrams, and mobile app mockups in purple and teal tones"
+              class="blog-card__image"
+              loading="lazy"
+            >
+            <span class="blog-card__category" data-cat="uiux">UI/UX</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                June 5, 2026
+              </span>
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                5 min read
+              </span>
+            </div>
+            <h2 class="blog-card__title">Designing Intuitive User Experiences</h2>
+            <p class="blog-card__excerpt">
+              Great UX design is invisible — users just know things work. Discover the psychology-backed principles and practical frameworks that make digital experiences feel natural and effortless.
+            </p>
+            <a href="blog-post-3.html" class="blog-card__read-more" id="read-more-3" aria-label="Read full article: Designing Intuitive User Experiences">
+              Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- ╔════════════════════════════════════╗
+             ║  CARD 4 — Cloud-Native Architecture║
+             ╚════════════════════════════════════╝ -->
+        <article class="blog-card reveal" id="blog-card-4" data-title="Cloud-Native Architecture in 2026">
+          <div class="blog-card__image-wrapper">
+            <img
+              src="assets/blog-cloud.png"
+              alt="Futuristic cloud-native architecture with interconnected servers and containers connected by glowing purple and teal data streams"
+              class="blog-card__image"
+              loading="lazy"
+            >
+            <span class="blog-card__category" data-cat="cloud">Cloud</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                May 28, 2026
+              </span>
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                7 min read
+              </span>
+            </div>
+            <h2 class="blog-card__title">Cloud-Native Architecture in 2026</h2>
+            <p class="blog-card__excerpt">
+              The cloud-native landscape is evolving at breakneck speed. From serverless computing to service meshes, explore the architectural patterns shaping scalable, resilient systems today.
+            </p>
+            <a href="blog-post-4.html" class="blog-card__read-more" id="read-more-4" aria-label="Read full article: Cloud-Native Architecture in 2026">
+              Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No Results Message -->
+      <div class="search-no-results" id="search-no-results" role="status" aria-live="polite">
+        <i class="fa-regular fa-face-frown" aria-hidden="true"></i>
+        <p>No articles found matching your search. Try a different keyword.</p>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT SECTION
+         ═══════════════════════════════════════════════════════════════ -->
+    <section class="contact-section" id="contact" aria-label="Contact us">
+      <div class="container contact-section__content">
+        <h2 class="contact-section__title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="contact-section__text">
+          Have a question, a project idea, or just want to say hello? We'd love to hear from you.
+        </p>
+        <form class="contact-form" id="contact-form" aria-label="Contact form">
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-name">Full Name</label>
+            <input type="text" class="contact-form__input" id="contact-name" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-email">Email Address</label>
+            <input type="email" class="contact-form__input" id="contact-email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="contact-form__group">
+            <label class="contact-form__label" for="contact-message">Message</label>
+            <textarea class="contact-form__textarea" id="contact-message" name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="contact-form__submit" id="contact-submit">
+            Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════════ -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer__content">
+      <p class="footer__copyright">
+        &copy; 2026 MainCrafts Technology. All rights reserved.
+      </p>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="landing.html" class="footer__link">Home</a>
+        <a href="blog.html" class="footer__link">Blog</a>
+        <a href="portfolio.html" class="footer__link">Portfolio</a>
+      </nav>
+      <div class="footer__social" aria-label="Social media links">
+        <a href="#" class="footer__social-link" aria-label="GitHub">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="footer__social-link" aria-label="Twitter / X">
+          <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ════════════════════════════════════════════════════════════════ -->
+  <script src="blog.js"></script>
+</body>
+</html>

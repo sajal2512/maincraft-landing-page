@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ════════════════════════════════════════════════════════════════
+       META & SEO
+       ════════════════════════════════════════════════════════════════ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A comprehensive guide to CSS Grid — learn grid-template-columns, auto-fit, minmax, and responsive patterns with practical examples.">
+  <title>Mastering CSS Grid: A Complete Guide — MainCrafts Technology</title>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       PRECONNECT & FONTS
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FONT AWESOME 6 CDN
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MAIN STYLESHEET
+       ════════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="blog-styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       NAVIGATION
+       ═══════════════════════════════════════════════════════════════ -->
+  <header class="site-header" id="site-header">
+    <nav class="navbar container" aria-label="Primary navigation">
+      <a href="landing.html" class="navbar__logo" id="navbar-logo" aria-label="MainCrafts Technology — Home">
+        <span class="navbar__logo-text">Main<span class="navbar__logo-accent">Crafts</span></span>
+      </a>
+
+      <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="landing.html" class="navbar__link" role="menuitem" id="nav-home">Home</a></li>
+        <li role="none"><a href="blog.html" class="navbar__link navbar__link--active" role="menuitem" id="nav-blog">Blog</a></li>
+        <li role="none"><a href="portfolio.html" class="navbar__link" role="menuitem" id="nav-portfolio">Portfolio</a></li>
+        <li role="none"><a href="#contact" class="navbar__link" role="menuitem" id="nav-contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ── Post Hero ── -->
+    <section class="post-hero" aria-label="Article header">
+      <img src="assets/blog-css-grid.png" alt="Glowing purple and teal grid lines forming a responsive web layout on a dark workspace with floating browser windows" class="post-hero__image">
+      <div class="post-hero__overlay"></div>
+      <div class="post-hero__content">
+        <span class="post-hero__category">Web Dev</span>
+        <h1 class="post-hero__title">Mastering CSS Grid: A Complete Guide</h1>
+        <div class="post-hero__meta">
+          <span class="post-hero__meta-item">
+            <i class="fa-regular fa-user" aria-hidden="true"></i> Sajal Shrivastava
+          </span>
+          <span class="post-hero__meta-divider" aria-hidden="true"></span>
+          <span class="post-hero__meta-item">
+            <i class="fa-regular fa-calendar" aria-hidden="true"></i> June 12, 2026
+          </span>
+          <span class="post-hero__meta-divider" aria-hidden="true"></span>
+          <span class="post-hero__meta-item">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i> 8 min read
+          </span>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── Article Content ── -->
+    <section class="post-content container" aria-label="Article body">
+      <a href="blog.html" class="post-content__back" id="back-to-blog">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to Blog
+      </a>
+
+      <article class="post-article container--narrow">
+
+        <p>
+          CSS Grid has fundamentally changed how we approach layout on the web. Before Grid, developers relied on floats, inline-blocks, and increasingly creative Flexbox hacks to achieve complex layouts. Grid provides a two-dimensional layout system that's purpose-built for exactly this — and once you master it, you'll wonder how you ever built without it.
+        </p>
+
+        <h2>Grid Basics</h2>
+        <p>
+          At its core, CSS Grid works by defining a grid container and placing child elements within rows and columns. The three properties you'll use most often are <code>grid-template-columns</code>, <code>grid-template-rows</code>, and <code>gap</code>.
+        </p>
+        <pre><code>.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Three equal columns with 2rem spacing */</code></pre>
+        <p>
+          The <code>fr</code> unit is Grid's secret weapon — it represents a <strong>fraction of the available space</strong>, making proportional layouts effortless. You can mix <code>fr</code> with fixed units: <code>200px 1fr 2fr</code> gives you a fixed sidebar and two flexible content areas.
+        </p>
+
+        <h2>Auto-Fit &amp; Minmax</h2>
+        <p>
+          The real magic happens when you combine <code>auto-fit</code> with <code>minmax()</code>. This single line creates a fully responsive grid that adapts to any screen width — <em>without a single media query</em>:
+        </p>
+        <pre><code>.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Cards wrap automatically when the container shrinks */</code></pre>
+        <p>
+          <code>auto-fit</code> creates as many columns as will fit, while <code>minmax(300px, 1fr)</code> ensures each column is at least 300px wide but can grow to fill available space. This pattern is perfect for card grids, image galleries, and dashboard widgets.
+        </p>
+
+        <h2>Named Grid Areas</h2>
+        <p>
+          For complex page layouts, <code>grid-template-areas</code> provides a visual, almost ASCII-art-like way to define your layout structure:
+        </p>
+        <pre><code>.page-layout {
+  display: grid;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar content content"
+    "footer  footer  footer";
+  grid-template-columns: 250px 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header  { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+.footer  { grid-area: footer; }</code></pre>
+        <p>
+          Named areas make your layout intent crystal clear, and rearranging sections for different breakpoints becomes as simple as redefining the area template in a media query.
+        </p>
+
+        <h2>Grid vs Flexbox: When to Use Which</h2>
+
+        <blockquote>
+          <p>"Flexbox is for alignment. Grid is for layout. Use both — they complement each other beautifully."</p>
+        </blockquote>
+
+        <p>
+          The simplest rule of thumb: use <strong>Flexbox</strong> for one-dimensional layouts (a row of nav links, a toolbar of buttons) and <strong>Grid</strong> for two-dimensional layouts (page scaffolding, card grids, dashboard layouts). In practice, the best designs combine both — Grid for the macro layout and Flexbox for component-level alignment within grid cells.
+        </p>
+        <p>
+          Modern CSS layout is more powerful than ever. With Grid, Flexbox, container queries, and subgrid now widely supported, there's never been a better time to rethink how you approach layout architecture.
+        </p>
+
+        <!-- Author Card -->
+        <div class="post-article__author-card">
+          <div class="post-article__author-avatar" aria-hidden="true">SS</div>
+          <div class="post-article__author-info">
+            <h4>Sajal Shrivastava</h4>
+            <p>Web Developer &amp; Tech Enthusiast at MainCrafts Technology. Passionate about building elegant solutions with modern tools.</p>
+          </div>
+        </div>
+
+      </article>
+    </section>
+
+
+    <!-- ── Related Posts ── -->
+    <section class="related-posts container" aria-label="Related articles">
+      <h2 class="related-posts__title">Related <span class="gradient-text">Articles</span></h2>
+      <div class="related-posts__grid">
+
+        <article class="blog-card reveal" id="related-card-1">
+          <div class="blog-card__image-wrapper">
+            <img src="assets/blog-ai.png" alt="Futuristic AI brain composed of circuit patterns hovering over a laptop" class="blog-card__image" loading="lazy">
+            <span class="blog-card__category">AI &amp; ML</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item"><i class="fa-regular fa-calendar" aria-hidden="true"></i> June 18, 2026</span>
+              <span class="blog-card__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> 6 min read</span>
+            </div>
+            <h3 class="blog-card__title">The Future of AI in Web Development</h3>
+            <p class="blog-card__excerpt">Artificial intelligence is reshaping the way we build for the web. Explore how AI is transforming every stage of the development lifecycle.</p>
+            <a href="blog-post-1.html" class="blog-card__read-more" aria-label="Read full article: The Future of AI in Web Development">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" id="related-card-4">
+          <div class="blog-card__image-wrapper">
+            <img src="assets/blog-cloud.png" alt="Cloud-native architecture with interconnected servers and glowing data streams" class="blog-card__image" loading="lazy">
+            <span class="blog-card__category">Cloud</span>
+          </div>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item"><i class="fa-regular fa-calendar" aria-hidden="true"></i> May 28, 2026</span>
+              <span class="blog-card__meta-item"><i class="fa-regular fa-clock" aria-hidden="true"></i> 7 min read</span>
+            </div>
+            <h3 class="blog-card__title">Cloud-Native Architecture in 2026</h3>
+            <p class="blog-card__excerpt">From serverless computing to service meshes, explore the architectural patterns shaping scalable, resilient systems today.</p>
+            <a href="blog-post-4.html" class="blog-card__read-more" aria-label="Read full article: Cloud-Native Architecture in 2026">Read More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" id="site-footer">
+    <div class="container footer__content">
+      <p class="footer__copyright">&copy; 2026 MainCrafts Technology. All rights reserved.</p>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a href="landing.html" class="footer__link">Home</a>
+        <a href="blog.html" class="footer__link">Blog</a>
+        <a href="portfolio.html" class="footer__link">Portfolio</a>
+      </nav>
+      <div class="footer__social" aria-label="Social media links">
+        <a href="#" class="footer__social-link" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+        <a href="#" class="footer__social-link" aria-label="Twitter / X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="blog.js"></script>
+</body>
+</html>
