@@ -101,20 +101,20 @@ function createContactApp() {
   });
 
   async function contactHandler(req, res) {
-    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO_EMAIL || !process.env.CONTACT_FROM_EMAIL) {
-      res.status(500).json({
-        success: false,
-        error: 'Contact email service is not configured.'
-      });
-      return;
-    }
-
     const validation = validateContactPayload(req.body);
     if (!validation.isValid) {
       res.status(400).json({
         success: false,
         error: 'Please fix the highlighted fields and try again.',
         fields: validation.errors
+      });
+      return;
+    }
+
+    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO_EMAIL || !process.env.CONTACT_FROM_EMAIL) {
+      res.status(500).json({
+        success: false,
+        error: 'Contact email service is not configured.'
       });
       return;
     }
