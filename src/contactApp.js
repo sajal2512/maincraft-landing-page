@@ -123,7 +123,7 @@ function createContactApp() {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     try {
-      await resend.emails.send({
+      const { data, error } = await resend.emails.send({
         from: process.env.CONTACT_FROM_EMAIL,
         to: process.env.CONTACT_TO_EMAIL,
         replyTo: email,
@@ -145,6 +145,16 @@ function createContactApp() {
         `
       });
 
+      if (error) {
+        console.error('Resend API rejected the send:', error);
+        res.status(502).json({
+          success: false,
+          error: 'The message could not be sent right now. Please try again shortly.'
+        });
+        return;
+      }
+
+      console.log('Email sent, Resend id:', data && data.id);
       res.status(200).json({
         success: true,
         message: 'Thanks, your message has been sent.'
